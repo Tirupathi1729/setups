@@ -1,5 +1,15 @@
 Installing maven on amazon linux (manually):
 
+To get the latest version of maven follow the below steps 
+go to https://dlcdn.apache.org
+select maven
+next select your required version ex:maven3
+here select appropriate version you need ex : 3.9.16
+then go to /binaries folder 
+here we have this link copy the link ex: https://dlcdn.apache.org/maven/maven-3/3.9.16/binaries/apache-maven-3.9.16-bin.tar.gz
+nxt go to you instance run the below steps it will install maven on your instance
+
+
 wget https://dlcdn.apache.org/maven/maven-3/3.9.16/binaries/apache-maven-3.9.16-bin.tar.gz
 tar -zxvf apache-maven-3.9.16-bin.tar.gz
 mv apache-maven-3.9.16 maven
