@@ -1,1 +1,1 @@
-# setups
+# Required setups for DevOps
