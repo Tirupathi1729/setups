@@ -1,0 +1,31 @@
+Kops download :
+
+curl -Lo kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
+chmod +x kops
+sudo mv kops /usr/local/bin/kops
+
+kops version
+
+kubectl download :
+
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
+
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+kubectl version
+
+aws s3 ls  
+
+aws s3 mb s3://tirupathi.devops1729
+
+export KOPS_STATE_STORE=s3://tirupathi.devops1729
+
+kops create cluster --name tirupathi.k8s.local --zones=us-east-1a,us-east-1b --control-plane-size=c7i-flex.large --control-plane-count=1 --control-plane-volume-size=20 --node-size=t3.micro --node-count=2 --node-volume-size=20 --image=ami-02a9cdd4e98bc3c78
+
+kops update cluster --name tirupathi.k8s.local --yes --admin
+
+kops get cluster
+
+kops get nodes
+
+kops delete cluster --name tirupathi.k8s.local --yes
